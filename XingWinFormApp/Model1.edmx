@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SystemTradingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TR1422">
+          <Key>
+            <PropertyRef Name="regdate" />
+            <PropertyRef Name="shcode" />
+          </Key>
+          <Property Name="regdate" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="hname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="shcode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="sign" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="change" Type="int" Nullable="false" />
+          <Property Name="diff" Type="float" Nullable="false" />
+          <Property Name="volume" Type="int" Nullable="false" />
+          <Property Name="diff_vol" Type="float" Nullable="false" />
+          <Property Name="offerrem1" Type="int" Nullable="false" />
+          <Property Name="bidrem1" Type="int" Nullable="false" />
+          <Property Name="last" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="lmtdaycnt" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TR1427">
+          <Key>
+            <PropertyRef Name="regdate" />
+            <PropertyRef Name="shcode" />
+          </Key>
+          <Property Name="regdate" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="hname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="shcode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="sign" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="change" Type="int" Nullable="false" />
+          <Property Name="diff" Type="float" Nullable="false" />
+          <Property Name="volume" Type="int" Nullable="false" />
+          <Property Name="diff_vol" Type="float" Nullable="false" />
+          <Property Name="lmtprice" Type="int" Nullable="false" />
+          <Property Name="rate" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TR8436">
+          <Key>
+            <PropertyRef Name="regdate" />
+            <PropertyRef Name="shcode" />
+          </Key>
+          <Property Name="regdate" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="hname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="shcode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="jnilclose" Type="int" Nullable="false" />
+          <Property Name="recprice" Type="int" Nullable="false" />
+          <Property Name="bu12gubun" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="gubun" Type="nchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SystemTradingModelStoreContainer">
+          <EntitySet Name="TR1422" EntityType="Self.TR1422" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TR1427" EntityType="Self.TR1427" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TR8436" EntityType="Self.TR8436" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SystemTradingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TR8436">
+          <Key>
+            <PropertyRef Name="regdate" />
+            <PropertyRef Name="shcode" />
+          </Key>
+          <Property Name="regdate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="hname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="shcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="jnilclose" Type="Int32" Nullable="false" />
+          <Property Name="recprice" Type="Int32" Nullable="false" />
+          <Property Name="bu12gubun" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="gubun" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="true" />
+        </EntityType>
+        <EntityContainer Name="SystemTradingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TR8436" EntityType="Self.TR8436" />
+          <EntitySet Name="TR1422" EntityType="SystemTradingModel.TR1422" />
+          <EntitySet Name="TR1427" EntityType="SystemTradingModel.TR1427" />
+        </EntityContainer>
+        <EntityType Name="TR1422">
+          <Key>
+            <PropertyRef Name="regdate" />
+            <PropertyRef Name="shcode" />
+          </Key>
+          <Property Name="regdate" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="hname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="shcode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="sign" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="change" Type="Int32" Nullable="false" />
+          <Property Name="diff" Type="Double" Nullable="false" />
+          <Property Name="volume" Type="Int32" Nullable="false" />
+          <Property Name="diff_vol" Type="Double" Nullable="false" />
+          <Property Name="offerrem1" Type="Int32" Nullable="false" />
+          <Property Name="bidrem1" Type="Int32" Nullable="false" />
+          <Property Name="last" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="lmtdaycnt" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TR1427">
+          <Key>
+            <PropertyRef Name="regdate" />
+            <PropertyRef Name="shcode" />
+          </Key>
+          <Property Name="regdate" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="hname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="shcode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="sign" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="change" Type="Int32" Nullable="false" />
+          <Property Name="diff" Type="Double" Nullable="false" />
+          <Property Name="volume" Type="Int32" Nullable="false" />
+          <Property Name="diff_vol" Type="Double" Nullable="false" />
+          <Property Name="lmtprice" Type="Int32" Nullable="false" />
+          <Property Name="rate" Type="Double" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SystemTradingModelStoreContainer" CdmEntityContainer="SystemTradingEntities">
+          <EntitySetMapping Name="TR8436">
+            <EntityTypeMapping TypeName="SystemTradingModel.TR8436">
+              <MappingFragment StoreEntitySet="TR8436">
+                <ScalarProperty Name="gubun" ColumnName="gubun" />
+                <ScalarProperty Name="regdate" ColumnName="regdate" />
+                <ScalarProperty Name="hname" ColumnName="hname" />
+                <ScalarProperty Name="shcode" ColumnName="shcode" />
+                <ScalarProperty Name="jnilclose" ColumnName="jnilclose" />
+                <ScalarProperty Name="recprice" ColumnName="recprice" />
+                <ScalarProperty Name="bu12gubun" ColumnName="bu12gubun" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TR1422">
+            <EntityTypeMapping TypeName="SystemTradingModel.TR1422">
+              <MappingFragment StoreEntitySet="TR1422">
+                <ScalarProperty Name="lmtdaycnt" ColumnName="lmtdaycnt" />
+                <ScalarProperty Name="last" ColumnName="last" />
+                <ScalarProperty Name="bidrem1" ColumnName="bidrem1" />
+                <ScalarProperty Name="offerrem1" ColumnName="offerrem1" />
+                <ScalarProperty Name="diff_vol" ColumnName="diff_vol" />
+                <ScalarProperty Name="volume" ColumnName="volume" />
+                <ScalarProperty Name="diff" ColumnName="diff" />
+                <ScalarProperty Name="change" ColumnName="change" />
+                <ScalarProperty Name="sign" ColumnName="sign" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="shcode" ColumnName="shcode" />
+                <ScalarProperty Name="hname" ColumnName="hname" />
+                <ScalarProperty Name="regdate" ColumnName="regdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TR1427">
+            <EntityTypeMapping TypeName="SystemTradingModel.TR1427">
+              <MappingFragment StoreEntitySet="TR1427">
+                <ScalarProperty Name="rate" ColumnName="rate" />
+                <ScalarProperty Name="lmtprice" ColumnName="lmtprice" />
+                <ScalarProperty Name="diff_vol" ColumnName="diff_vol" />
+                <ScalarProperty Name="volume" ColumnName="volume" />
+                <ScalarProperty Name="diff" ColumnName="diff" />
+                <ScalarProperty Name="change" ColumnName="change" />
+                <ScalarProperty Name="sign" ColumnName="sign" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="shcode" ColumnName="shcode" />
+                <ScalarProperty Name="hname" ColumnName="hname" />
+                <ScalarProperty Name="regdate" ColumnName="regdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="없음" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
